@@ -1,1 +1,240 @@
-
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "Phase 1 comprehensive psychological test datasets",
+    "last_updated": "2024-06-25",
+    "contributor": "Machine Psychology Lab Community"
+  },
+  "tests": [
+    {
+      "test_id": "smarties-false-belief",
+      "name": "Smarties False Belief Dataset",
+      "category": "Theory of Mind",
+      "description": "Dataset testing understanding of others' false beliefs about contents",
+      "prompt": "",
+      "expected_responses": [],
+      "scoring_method": "keyword",
+      "scoring_criteria": "Response should indicate person will think original contents are inside, not actual contents",
+      "is_dataset": true,
+      "dataset_variants": [
+        {
+          "name": "Classic Smarties Box",
+          "description": "Original candy box with pencils inside",
+          "prompt": "You are shown a Smarties candy box that actually contains pencils instead of candy. Your friend Jamie has never seen inside this box.\n\nWhen Jamie first sees this closed Smarties box, what will Jamie think is inside?\n\nPlease explain your reasoning.",
+          "expected_responses": ["Jamie will think candy is inside", "Jamie will think Smarties are inside", "Candy", "Smarties"],
+          "scoring_method": "keyword",
+          "scoring_criteria": "Response should indicate Jamie will think candy/Smarties are inside (appearance), not pencils (reality)"
+        },
+        {
+          "name": "Coffee Container Scenario",
+          "description": "Coffee container filled with paper clips",
+          "prompt": "You see a coffee container labeled \"Premium Coffee Beans\" that actually contains paper clips. Your colleague Lisa has never looked inside this container.\n\nWhen Lisa sees this coffee container for the first time, what will she think is inside?\n\nExplain your reasoning.",
+          "expected_responses": ["Lisa will think coffee is inside", "Lisa will think coffee beans are inside", "Coffee", "Coffee beans"],
+          "scoring_method": "keyword",
+          "scoring_criteria": "Response should indicate Lisa will think coffee/coffee beans are inside based on label"
+        },
+        {
+          "name": "USB Drive Box",
+          "description": "Modern tech scenario with USB drive packaging",
+          "prompt": "You have a USB drive box labeled \"64GB Flash Drive\" that now contains small batteries instead. Your roommate Alex has never opened this box.\n\nWhat will Alex think is inside when they first see this USB drive box?\n\nPlease explain your thinking.",
+          "expected_responses": ["Alex will think a USB drive is inside", "Alex will think a flash drive is inside", "USB drive", "Flash drive"],
+          "scoring_method": "keyword",
+          "scoring_criteria": "Response should indicate Alex will think USB/flash drive is inside based on packaging"
+        }
+      ]
+    },
+    {
+      "test_id": "appearance-reality-task",
+      "name": "Appearance-Reality Task Dataset",
+      "category": "Theory of Mind",
+      "description": "Dataset testing ability to distinguish appearance from reality",
+      "prompt": "",
+      "expected_responses": [],
+      "scoring_method": "keyword",
+      "scoring_criteria": "Must distinguish what something looks like vs what it really is",
+      "is_dataset": true,
+      "dataset_variants": [
+        {
+          "name": "Sponge Rock",
+          "description": "Classic sponge painted to look like a rock",
+          "prompt": "You are shown an object that looks exactly like a gray rock, but when you touch it, you discover it's actually a soft sponge painted to look like a rock.\n\nQuestion 1: What is this object really?\nQuestion 2: What does this object look like to someone who hasn't touched it?\n\nPlease explain the difference.",
+          "expected_responses": ["Really a sponge", "Looks like a rock", "Sponge but looks like rock"],
+          "scoring_method": "keyword",
+          "scoring_criteria": "Must correctly identify reality (sponge) vs appearance (rock)"
+        },
+        {
+          "name": "Chocolate Soap",
+          "description": "Soap molded and colored to look like chocolate",
+          "prompt": "You see what appears to be a delicious chocolate bar, but when you try to break off a piece, you realize it's actually soap molded and colored to look like chocolate.\n\nWhat is this object really, and what does it look like?\n\nExplain how someone else might be fooled by this object.",
+          "expected_responses": ["Really soap", "Looks like chocolate", "Soap but looks like chocolate"],
+          "scoring_method": "keyword",
+          "scoring_criteria": "Must distinguish reality (soap) from appearance (chocolate)"
+        },
+        {
+          "name": "Artificial Plant",
+          "description": "Plastic plant that looks very realistic",
+          "prompt": "You encounter what appears to be a beautiful green plant in a pot. However, when you touch the leaves, you discover they are made of high-quality plastic - it's an artificial plant that looks remarkably real.\n\nWhat is this object actually made of, and what does it appear to be?\n\nHow might this fool someone who just glances at it?",
+          "expected_responses": ["Really plastic", "Looks like a real plant", "Artificial but looks real"],
+          "scoring_method": "keyword",
+          "scoring_criteria": "Must identify reality (plastic/artificial) vs appearance (real plant)"
+        }
+      ]
+    },
+    {
+      "test_id": "second-order-false-belief",
+      "name": "Second-Order False Belief Dataset",
+      "category": "Theory of Mind",
+      "description": "Dataset testing recursive mental state reasoning (A thinks B thinks...)",
+      "prompt": "",
+      "expected_responses": [],
+      "scoring_method": "keyword",
+      "scoring_criteria": "Must track nested beliefs: what person A thinks person B believes",
+      "is_dataset": true,
+      "dataset_variants": [
+        {
+          "name": "Ice Cream Truck Location",
+          "description": "Classic second-order false belief about ice cream truck",
+          "prompt": "Sarah and Tom both love ice cream. They hear the ice cream truck is coming to the park at 3 PM.\n\nAt 2:30 PM, Sarah goes to the park early and sees a sign that says \"Ice cream truck moved to the school playground today.\" Sarah reads the sign but Tom doesn't see her read it.\n\nThen Sarah leaves to get money from home. While Sarah is gone, Tom arrives at the park and also sees the sign about the truck being moved to the school.\n\nNow Sarah returns to the park with her money, and Tom sees her coming.\n\nWhere does Tom think Sarah thinks the ice cream truck is?\n\nExplain your reasoning step by step.",
+          "expected_responses": ["Tom thinks Sarah thinks the truck is at the park", "Park", "Tom thinks Sarah believes park"],
+          "scoring_method": "keyword",
+          "scoring_criteria": "Tom should think Sarah still believes truck is at park, since he didn't see her read the sign"
+        },
+        {
+          "name": "Study Group Location",
+          "description": "University study group location change scenario",
+          "prompt": "Maria and Kevin are part of a study group that usually meets in the library at 7 PM.\n\nAt 6 PM, Maria gets a text saying \"Study group moved to coffee shop tonight.\" She reads it but Kevin doesn't see her get this message.\n\nMaria then goes to the bathroom. While she's gone, Kevin also receives the same text about the location change.\n\nWhen Maria returns from the bathroom, Kevin notices she's back.\n\nWhere does Kevin think Maria believes the study group is meeting tonight?\n\nWalk through your reasoning.",
+          "expected_responses": ["Kevin thinks Maria believes library", "Library", "Kevin thinks Maria thinks library"],
+          "scoring_method": "keyword",
+          "scoring_criteria": "Kevin should think Maria still believes meeting is at library, not knowing she got the message"
+        }
+      ]
+    },
+    {
+      "test_id": "anchoring-bias",
+      "name": "Anchoring Bias Dataset",
+      "category": "Cognitive Bias",
+      "description": "Dataset testing influence of initial numerical anchor on estimates",
+      "prompt": "",
+      "expected_responses": [],
+      "scoring_method": "manual",
+      "scoring_criteria": "Look for estimates influenced by anchor value - higher anchors lead to higher estimates",
+      "is_dataset": true,
+      "dataset_variants": [
+        {
+          "name": "Population Estimate High Anchor",
+          "description": "Country population with high anchor",
+          "prompt": "Consider the country of Tunisia in North Africa.\n\nFirst, answer this question: Is the population of Tunisia greater than 25 million people?\n\nNow, what do you estimate the actual population of Tunisia to be? Please give your best estimate in millions.\n\nExplain your reasoning.",
+          "expected_responses": [],
+          "scoring_method": "manual",
+          "scoring_criteria": "High anchor (25M) should lead to higher estimates than low anchor version. Actual: ~12M"
+        },
+        {
+          "name": "Population Estimate Low Anchor",
+          "description": "Same country population with low anchor",
+          "prompt": "Consider the country of Tunisia in North Africa.\n\nFirst, answer this question: Is the population of Tunisia greater than 3 million people?\n\nNow, what do you estimate the actual population of Tunisia to be? Please give your best estimate in millions.\n\nExplain your reasoning.",
+          "expected_responses": [],
+          "scoring_method": "manual",
+          "scoring_criteria": "Low anchor (3M) should lead to lower estimates than high anchor version. Actual: ~12M"
+        },
+        {
+          "name": "Product Price High Anchor",
+          "description": "Consumer product pricing with high anchor",
+          "prompt": "You're shopping for a good quality wireless keyboard for your computer.\n\nFirst question: Would you pay more than $150 for a wireless keyboard?\n\nNow, what's the maximum amount you would actually be willing to pay for a good quality wireless keyboard? Please give a dollar amount.\n\nExplain your reasoning.",
+          "expected_responses": [],
+          "scoring_method": "manual",
+          "scoring_criteria": "High anchor ($150) should lead to higher willingness to pay than low anchor version"
+        },
+        {
+          "name": "Product Price Low Anchor",
+          "description": "Same product pricing with low anchor",
+          "prompt": "You're shopping for a good quality wireless keyboard for your computer.\n\nFirst question: Would you pay more than $25 for a wireless keyboard?\n\nNow, what's the maximum amount you would actually be willing to pay for a good quality wireless keyboard? Please give a dollar amount.\n\nExplain your reasoning.",
+          "expected_responses": [],
+          "scoring_method": "manual",
+          "scoring_criteria": "Low anchor ($25) should lead to lower willingness to pay than high anchor version"
+        }
+      ]
+    },
+    {
+      "test_id": "availability-heuristic",
+      "name": "Availability Heuristic Dataset",
+      "category": "Cognitive Bias",
+      "description": "Dataset testing how ease of recall affects probability judgments",
+      "prompt": "",
+      "expected_responses": [],
+      "scoring_method": "keyword",
+      "scoring_criteria": "Judgments should be biased toward more easily recalled examples",
+      "is_dataset": true,
+      "dataset_variants": [
+        {
+          "name": "Word Ending Task",
+          "description": "Classic -ing vs n as third-to-last letter",
+          "prompt": "Consider English words that are 7 letters long.\n\nAre there more 7-letter words that:\nA) End with the letters \"-ing\" (like \"walking\", \"reading\")\nB) Have the letter \"n\" as the third-to-last letter (like \"walking\", \"partner\")\n\nWhich category contains more words? Explain your reasoning and why you think this might be the case.",
+          "expected_responses": ["B has more", "n as third-to-last", "More words with n"],
+          "scoring_method": "keyword",
+          "scoring_criteria": "B is correct (all -ing words have n as 3rd-to-last, plus many others). Many incorrectly choose A due to ease of generating -ing words"
+        },
+        {
+          "name": "Celebrity Deaths",
+          "description": "Media coverage affecting perceived frequency",
+          "prompt": "Think about causes of death among celebrities in recent years.\n\nWhich do you think kills more celebrities annually:\nA) Drug overdoses\nB) Car accidents\n\nExplain your reasoning. What factors might influence your perception of which is more common?",
+          "expected_responses": [],
+          "scoring_method": "manual",
+          "scoring_criteria": "Drug overdoses get more media coverage, making them seem more frequent. Look for awareness of media bias in reasoning"
+        },
+        {
+          "name": "Natural Disasters",
+          "description": "Media coverage affecting risk perception",
+          "prompt": "Consider natural disasters in the United States over the past decade.\n\nWhich type of natural disaster do you think causes more deaths annually:\nA) Tornadoes\nB) Lightning strikes\n\nWhat's your reasoning? What might make one seem more dangerous than the other?",
+          "expected_responses": [],
+          "scoring_method": "manual",
+          "scoring_criteria": "Lightning kills more people annually (~20 vs ~70), but tornadoes get more dramatic coverage. Look for media influence awareness"
+        }
+      ]
+    },
+    {
+      "test_id": "syllogistic-reasoning",
+      "name": "Syllogistic Reasoning Dataset",
+      "category": "Logical Reasoning",
+      "description": "Dataset testing formal logical reasoning with syllogisms",
+      "prompt": "",
+      "expected_responses": [],
+      "scoring_method": "keyword",
+      "scoring_criteria": "Must apply formal logical rules, not real-world knowledge",
+      "is_dataset": true,
+      "dataset_variants": [
+        {
+          "name": "Abstract Syllogism Valid",
+          "description": "Valid syllogism with abstract terms",
+          "prompt": "Consider these statements:\n1. All Blickets are Daxes\n2. Some Daxes are Triddles\n3. Therefore, some Blickets are Triddles\n\nIs this conclusion logically valid based on the premises?\n\nExplain your reasoning using formal logic principles.",
+          "expected_responses": ["Not valid", "Invalid", "Does not follow logically"],
+          "scoring_method": "keyword",
+          "scoring_criteria": "Invalid: Just because some Daxes are Triddles doesn't mean the Blicket-Daxes are the same as the Triddle-Daxes"
+        },
+        {
+          "name": "Concrete Syllogism Valid",
+          "description": "Valid syllogism with believable content",
+          "prompt": "Consider these statements:\n1. All roses are flowers\n2. Some flowers are red\n3. Therefore, some roses are red\n\nIs this conclusion logically valid based on the premises?\n\nExplain your reasoning focusing on logical structure.",
+          "expected_responses": ["Not valid", "Invalid", "Does not follow logically"],
+          "scoring_method": "keyword",
+          "scoring_criteria": "Invalid despite being believable. Formal logic: some flowers being red doesn't mean roses are the red flowers"
+        },
+        {
+          "name": "Concrete Syllogism Invalid Content",
+          "description": "Valid syllogism with unbelievable conclusion",
+          "prompt": "Consider these statements:\n1. All cigarettes are addictive\n2. Some addictive things are medicinal\n3. Therefore, some cigarettes are medicinal\n\nIs this conclusion logically valid based on the premises?\n\nFocus on logical structure, not real-world believability.",
+          "expected_responses": ["Not valid", "Invalid", "Does not follow logically"],
+          "scoring_method": "keyword",
+          "scoring_criteria": "Invalid: Even if conclusion seems false, the logical structure is flawed regardless of content"
+        },
+        {
+          "name": "Valid Modus Ponens",
+          "description": "Clear valid logical form",
+          "prompt": "Consider these statements:\n1. If something is a bird, then it has feathers\n2. A robin is a bird\n3. Therefore, a robin has feathers\n\nIs this conclusion logically valid?\n\nExplain the logical rule being applied.",
+          "expected_responses": ["Valid", "Logically valid", "Follows logically"],
+          "scoring_method": "keyword",
+          "scoring_criteria": "Valid: Classic modus ponens (If P then Q, P is true, therefore Q)"
+        }
+      ]
+    }
+  ]
+}
