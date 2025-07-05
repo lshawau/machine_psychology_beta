@@ -5,13 +5,18 @@
 This project was inspired by and builds upon the following research:
 
 ### Primary Inspiration
-**"Sparks of Artificial General Intelligence: Early experiments with GPT-4"**
-- Authors: Sébastien Bubeck, Varun Chandrasekaran, Ronen Eldan, Johannes Gehrke, Eric Horvitz, Ece Kamar, Peter Lee, Yin Tat Lee, Yuanzhi Li, Scott Lundberg, Harsha Nori, Hamid Palangi, Marco Tulio Ribeiro, Yi Zhang
+**"Machine Psychology"**
+- Authors: Thilo Hagendorff, Ishita Dasgupta, Marcel Binz, Stephanie C.Y. Chan, Andrew Lampinen, Jane X. Wang, Zeynep Akata, Eric Schulz
 - arXiv: 2303.13988v6
 - URL: https://arxiv.org/abs/2303.13988
-- Date: March 2023
+- Date: August 9, 2024
 
-*This seminal paper demonstrated systematic approaches to evaluating AI capabilities across cognitive domains, providing the methodological foundation for structured psychological assessment of AI models.*
+*This foundational paper established the field of "machine psychology" - applying behavioral experiments from psychology to understand LLM behavior. It provides the theoretical framework and methodological foundation for systematic psychological assessment of AI models using established paradigms from cognitive science, developmental psychology, and behavioral sciences.*
+
+### Related Machine Psychology Research
+- **Binz, M. & Schulz, E.** (2023). Using cognitive psychology to understand GPT-3. Proceedings of the National Academy of Sciences, 120(6), 1-10.
+- **Sap, M., Le Bras, R., Fried, D., & Choi, Y.** (2022). Neural Theory-of-Mind? On the Limits of Social Intelligence in Large LMs. Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing.
+- **Strachan, J. W. A. et al.** (2024). Testing theory of mind in large language models and humans. Nature Human Behaviour, 8, 1285–1295.
 
 ## Analysis Engine Citations
 
