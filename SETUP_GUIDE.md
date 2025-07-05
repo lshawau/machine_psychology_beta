@@ -17,14 +17,29 @@
 
 ### 1. Environment Setup
 ```bash
-# Update your conda environment with new dependencies
-conda env update -f environment.yml
+# Create a new conda environment with Python 3.11
+conda create -n machine-psychology python=3.11
 
 # Activate the environment
 conda activate machine-psychology
 ```
 
-### 2. Model Download
+### 2. Install Dependencies
+```bash
+# Install core scientific packages from conda-forge
+conda install -c conda-forge spacy nltk pandas numpy scipy matplotlib scikit-learn
+
+# Install AI/ML packages from conda-forge
+conda install -c conda-forge transformers sentence-transformers torch torchvision torchaudio
+
+# Install additional NLP packages
+conda install -c conda-forge textblob vadersentiment requests pyyaml tqdm
+
+# Download spaCy English model
+python -m spacy download en_core_web_sm
+```
+
+### 3. Model Download
 ```bash
 # Download all required models (internet required)
 python setup_models.py
@@ -35,7 +50,7 @@ python setup_models.py
 # - Sentence-BERT embeddings (~90MB)
 ```
 
-### 3. Verification
+### 4. Verification
 ```bash
 # Verify everything is working
 python setup_models.py --verify-only
@@ -43,7 +58,7 @@ python setup_models.py --verify-only
 # Should show all engines as ✅ working
 ```
 
-### 4. Run Application
+### 5. Run Application
 ```bash
 python machine_psychology_lab_1.py
 ```
@@ -58,6 +73,24 @@ Once running, go to **Settings → Analysis Engine Configuration**:
 
 ## Troubleshooting
 
+### Environment Creation Issues?
+If you encounter pip registry errors during environment creation:
+
+```bash
+# Skip pip entirely, use conda-forge for everything
+conda create -n machine-psychology python=3.11
+conda activate machine-psychology
+
+# Install all packages from conda-forge (more reliable)
+conda install -c conda-forge spacy nltk pandas numpy scipy matplotlib scikit-learn
+conda install -c conda-forge transformers sentence-transformers torch torchvision torchaudio
+conda install -c conda-forge textblob vadersentiment requests pyyaml tqdm
+```
+
+**Common pip registry error:** `FileNotFoundError: [WinError 2] The system cannot find the file specified`
+- This is a Windows registry corruption issue with pip
+- Solution: Use conda-forge exclusively (recommended approach above)
+
 ### Models Not Downloading?
 ```bash
 # Check internet connection
@@ -69,8 +102,8 @@ python setup_models.py --cache-dir ./models
 
 ### Advanced Engine Not Available?
 ```bash
-# Install missing dependencies
-pip install transformers sentence-transformers torch
+# Install missing dependencies from conda-forge
+conda install -c conda-forge transformers sentence-transformers torch
 
 # Re-run setup
 python setup_models.py
@@ -83,6 +116,13 @@ python -m spacy download en_core_web_sm
 
 # Verify
 python -c "import spacy; nlp = spacy.load('en_core_web_sm'); print('✅ spaCy working')"
+```
+
+### Windows Insider Edition Users
+If you're running Windows Insider builds and pip fails:
+```bash
+# Use conda-forge exclusively (pip has known issues on unstable Windows builds)
+conda install -c conda-forge [package-name]
 ```
 
 ## Offline Usage
