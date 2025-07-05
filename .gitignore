@@ -1,0 +1,209 @@
+# Machine Psychology Lab - Git Ignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+machine-psychology/
+
+# Conda environments
+.conda/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# celery beat schedule file
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# Machine Learning Models and Cache
+models/
+.cache/
+*.model
+*.pkl
+*.pickle
+
+# HuggingFace Cache (keep local but don't commit)
+transformers_cache/
+sentence_transformers_cache/
+
+# spaCy models (downloaded via setup script)
+*.spacy
+
+# Application Data Files
+psychology_results.json
+psychology_tests.json
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+*.lnk
+
+# Research data (keep private)
+research_data/
+experiments/
+results_backup/
+user_data/
+
+# Configuration files with sensitive data
+config.json
+secrets.json
+api_keys.txt
+
+# Large datasets (should be downloaded separately)
+datasets/large/
+datasets/private/
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Compressed files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Documentation builds
+docs/_build/
+docs/build/
+
+# PyQt UI files
+*.ui
+
+# Profiling data
+*.prof
+
+# Coverage reports
+htmlcov/
+
+# Local development
+local/
+scratch/
+test_outputs/
