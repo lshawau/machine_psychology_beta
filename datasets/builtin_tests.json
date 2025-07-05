@@ -1,1 +1,93 @@
 
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "Core built-in psychological tests",
+    "last_updated": "2024-06-25"
+  },
+  "tests": [
+    {
+      "test_id": "sally-anne-dataset",
+      "name": "Sally-Anne Test Dataset",
+      "category": "Theory of Mind",
+      "description": "Dataset of false-belief tests to assess theory of mind capabilities with multiple scenarios",
+      "prompt": "",
+      "expected_responses": [],
+      "scoring_method": "keyword",
+      "scoring_criteria": "Response should indicate the person will look where they left the object, not where it actually is.",
+      "is_dataset": true,
+      "dataset_variants": [
+        {
+          "name": "Classic Sally-Anne",
+          "description": "Original Sally-Anne false-belief test with basket and box",
+          "prompt": "Sally and Anne are in a room. Sally has a basket and Anne has a box. Sally puts a marble in her basket and then leaves the room. While Sally is away, Anne takes the marble from Sally's basket and puts it in her box. Sally comes back into the room.\n\nWhere will Sally look for her marble?\n\nPlease explain your reasoning.",
+          "expected_responses": [
+            "Sally will look in her basket",
+            "Sally will look in the basket", 
+            "In her basket",
+            "The basket"
+          ],
+          "scoring_method": "keyword",
+          "scoring_criteria": "Response should indicate Sally will look in her basket (where she left it), not where the marble actually is."
+        },
+        {
+          "name": "Library Book Scenario",
+          "description": "Alternative false-belief scenario with library book placement",
+          "prompt": "Emma and Jake are studying in the library. Emma puts her book on the table next to her chair and goes to find a reference book. While Emma is gone, Jake moves Emma's book to the shelf to make room for his papers. Emma returns to continue studying.\n\nWhere will Emma look for her book?\n\nPlease explain your reasoning.",
+          "expected_responses": [
+            "Emma will look on the table",
+            "Emma will look next to her chair",
+            "On the table where she left it",
+            "Next to her chair"
+          ],
+          "scoring_method": "keyword",
+          "scoring_criteria": "Response should indicate Emma will look on the table where she left it, not on the shelf where it actually is."
+        }
+      ]
+    },
+    {
+      "test_id": "asian-disease-framing",
+      "name": "Asian Disease Problem",
+      "category": "Cognitive Bias",
+      "description": "Tests susceptibility to framing effects in decision making",
+      "prompt": "Imagine that the U.S. is preparing for the outbreak of an unusual Asian disease, which is expected to kill 600 people. Two alternative programs to combat the disease have been proposed.\n\nProgram A: 200 people will be saved\nProgram B: There is a 1/3 probability that 600 people will be saved, and 2/3 probability that no people will be saved\n\nWhich program would you favor? Please explain your reasoning.",
+      "expected_responses": [],
+      "scoring_method": "manual",
+      "scoring_criteria": "Look for risk aversion in gain frame. Many humans prefer Program A due to certainty bias.",
+      "is_dataset": false,
+      "dataset_variants": []
+    },
+    {
+      "test_id": "linda-bank-teller",
+      "name": "Linda the Bank Teller",
+      "category": "Cognitive Bias",
+      "description": "Tests for conjunction fallacy in probability judgments",
+      "prompt": "Linda is 31 years old, single, outspoken, and very bright. She majored in philosophy. As a student, she was deeply concerned with issues of discrimination and social justice, and also participated in anti-nuclear demonstrations.\n\nWhich is more probable?\n\nA) Linda is a bank teller\nB) Linda is a bank teller and is active in the feminist movement\n\nPlease explain your reasoning.",
+      "expected_responses": [
+        "A is more probable",
+        "Linda is a bank teller",
+        "Option A"
+      ],
+      "scoring_method": "keyword",
+      "scoring_criteria": "Correct answer is A. B cannot be more probable than A since it's a subset of A.",
+      "is_dataset": false,
+      "dataset_variants": []
+    },
+    {
+      "test_id": "wason-selection",
+      "name": "Wason Selection Task",
+      "category": "Logical Reasoning", 
+      "description": "Tests logical reasoning and confirmation bias",
+      "prompt": "You are shown four cards lying on a table. Each card has a number on one side and a letter on the other side. The visible faces show: 3, 8, D, K\n\nYou are told: \"If a card has a vowel on one side, then it has an even number on the other side.\"\n\nWhich card(s) must you turn over to test whether this rule is true or false?\n\nPlease explain your reasoning.",
+      "expected_responses": [
+        "D and 3",
+        "D and the 3", 
+        "Turn over D and 3"
+      ],
+      "scoring_method": "keyword",
+      "scoring_criteria": "Must turn over D (to check if even number) and 3 (to check if not a vowel). Many incorrectly choose D and 8.",
+      "is_dataset": false,
+      "dataset_variants": []
+    }
+  ]
+}
