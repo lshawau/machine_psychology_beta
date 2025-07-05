@@ -1,0 +1,95 @@
+name: machine-psychology
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Core Python and build tools
+  - python=3.11.13
+  - pip
+  - setuptools
+  - wheel
+
+  # Core scientific computing (conda versions for better compatibility)
+  - numpy=2.2.5
+  - scipy
+  - matplotlib=3.10.0
+  - pandas
+  - scikit-learn
+  - joblib
+
+  # NLP and ML libraries (conda where available)
+  - spacy=3.8.2
+  - spacy-model-en_core_web_sm=3.8.0
+  - nltk=3.9.1
+  - tiktoken=0.9.0
+
+  # UI and web frameworks
+  - pyqt=6.7.1
+  - qt
+
+  # System and utility libraries
+  - certifi
+  - requests
+  - pyyaml
+  - tqdm
+  - rich
+  - colorama
+  - click
+
+  # Pip packages (including PyTorch with auto-detection)
+  - pip:
+    # PyTorch - will auto-detect GPU/CPU during install
+    - torch>=2.7.0
+    - torchvision
+    - torchaudio
+    
+    # Hugging Face ecosystem
+    - transformers==4.52.4
+    - tokenizers==0.21.1
+    - huggingface-hub==0.33.0
+    - safetensors==0.5.3
+    - sentence-transformers==4.1.0
+    
+    # AI/ML tools
+    - openai==1.90.0
+    - chromadb==1.0.13
+    - onnxruntime==1.22.0
+    
+    # Web frameworks and APIs
+    - fastapi==0.115.13
+    - uvicorn==0.34.3
+    - starlette==0.46.2
+    - gradio==5.34.2
+    - gradio-client==1.10.3
+    
+    # Audio processing
+    - pydub==0.25.1
+    - soundfile==0.13.1
+    - pyttsx3==2.98
+    
+    # Text processing
+    - textblob==0.19.0
+    - vadersentiment==3.3.2
+    
+    # Additional ML/NLP dependencies for analysis engine upgrade
+    - datasets==3.2.0
+    - accelerate==1.2.1
+    - regex==2024.11.6
+    - einops==0.8.0
+    - psutil==6.1.0
+    
+    # Utilities
+    - python-dotenv==1.1.0
+    - backoff==2.2.1
+    - tenacity==9.1.2
+    - humanfriendly==10.0
+    - coloredlogs==15.0.1
+    
+    # Development tools
+    - ruff==0.12.0
+    - build==1.2.2.post1
+    
+    # Windows-specific (will be ignored on other platforms)
+    - pywin32==310 ; sys_platform == "win32"
+    - pypiwin32==223 ; sys_platform == "win32"
+    - comtypes==1.4.11 ; sys_platform == "win32"
