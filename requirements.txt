@@ -1,5 +1,16 @@
 # Machine Psychology Lab - Requirements
-# For pip users (conda environment.yml recommended for full compatibility)
+# 
+# RECOMMENDED: Use conda-forge installation instead of pip
+# See SETUP_GUIDE.md for conda-forge installation instructions
+# 
+# This requirements.txt is provided for reference only.
+# Many users experience pip registry issues on Windows.
+# conda-forge provides more reliable package management.
+#
+# To install with conda-forge:
+# conda install -c conda-forge spacy nltk pandas numpy scipy matplotlib scikit-learn
+# conda install -c conda-forge transformers sentence-transformers torch torchvision torchaudio  
+# conda install -c conda-forge textblob vadersentiment requests pyyaml tqdm
 
 # Core scientific computing
 numpy>=2.2.0
