@@ -66,7 +66,7 @@ python setup_models.py
 python setup_models.py --verify-only
 
 # Run application
-python machine_psychology_lab_1.py
+python machine_psychology_lab.py
 ```
 
 ## 🔧 Analysis Engines
