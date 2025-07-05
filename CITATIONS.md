@@ -65,9 +65,9 @@ If you use the Machine Psychology Lab in your research, please cite:
 ```bibtex
 @software{machine_psychology_lab,
   title={Machine Psychology Lab: A Research Tool for Systematic Psychological Evaluation of AI Models},
-  author={[Your Name/Institution]},
+  author={Lee Shaw},
   year={2025},
-  url={[Your Repository URL]},
+  url={https://github.com/lshawau/machine_psychology_beta},
   note={GPL-3.0 License}
 }
 ```
