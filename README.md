@@ -94,6 +94,7 @@ Choose your analysis approach in **Settings → Analysis Engine Configuration**:
 ## 📚 Documentation
 
 - **[Setup Guide](SETUP_GUIDE.md)** - Detailed installation and troubleshooting
+- **[Emergency Install Guide](EMERGENCY_INSTALL.md)** - Last resort installation methods (if everything else fails)
 - **[Engine Upgrade Summary](ENGINE_UPGRADE_SUMMARY.md)** - Technical architecture overview
 - **[Citations](CITATIONS.md)** - Academic references and model attributions
 
@@ -108,7 +109,7 @@ This tool expects NLP models to perform poorly compared to human psychological a
 When publishing research using this tool, please cite:
 - The specific analysis engines used (see [CITATIONS.md](CITATIONS.md))
 - This tool's methodology and approach
-- The foundational research that inspired this work
+- The foundational "Machine Psychology" research by Hagendorff et al. (2024) that inspired this work
 
 ## 📋 System Requirements
 
