@@ -27,7 +27,7 @@ The Machine Psychology Lab provides a systematic framework for psychological eva
 ### Option 1: Automated Installation (Recommended)
 ```bash
 # Clone the repository
-git clone [your-repo-url]
+git clone https://github.com/lshawau/machine_psychology_beta.git
 cd machine-psychology-lab
 
 # Run automated installation script
@@ -44,7 +44,7 @@ python machine_psychology_lab_1.py
 ### Option 2: Manual Installation
 ```bash
 # Clone the repository
-git clone [your-repo-url]
+git clone https://github.com/lshawau/machine_psychology_beta.git
 cd machine-psychology-lab
 
 # Create conda environment with Python 3.11
