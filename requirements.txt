@@ -1,0 +1,87 @@
+# Machine Psychology Lab - Requirements
+# For pip users (conda environment.yml recommended for full compatibility)
+
+# Core scientific computing
+numpy>=2.2.0
+scipy>=1.10.0
+matplotlib>=3.10.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+joblib>=1.3.0
+
+# NLP and ML libraries
+spacy>=3.8.0
+nltk>=3.9.0
+tiktoken>=0.9.0
+torch>=2.7.0
+torchvision>=0.18.0
+torchaudio>=2.4.0
+
+# Hugging Face ecosystem
+transformers==4.52.4
+tokenizers==0.21.1
+huggingface-hub==0.33.0
+safetensors==0.5.3
+sentence-transformers==4.1.0
+
+# Additional ML/NLP dependencies for analysis engine upgrade
+datasets==3.2.0
+accelerate==1.2.1
+regex==2024.11.6
+einops==0.8.0
+psutil==6.1.0
+
+# AI/ML tools
+openai==1.90.0
+chromadb==1.0.13
+onnxruntime==1.22.0
+
+# Web frameworks and APIs
+fastapi==0.115.13
+uvicorn==0.34.3
+starlette==0.46.2
+gradio==5.34.2
+gradio-client==1.10.3
+
+# Audio processing
+pydub==0.25.1
+soundfile==0.13.1
+pyttsx3==2.98
+
+# Text processing
+textblob==0.19.0
+vadersentiment==3.3.2
+
+# GUI framework
+PyQt6>=6.7.0
+
+# System and utility libraries
+certifi>=2023.0.0
+requests>=2.31.0
+pyyaml>=6.0
+tqdm>=4.65.0
+rich>=13.0.0
+colorama>=0.4.6
+click>=8.1.0
+
+# Utilities
+python-dotenv==1.1.0
+backoff==2.2.1
+tenacity==9.1.2
+humanfriendly==10.0
+coloredlogs==15.0.1
+
+# Development tools
+ruff==0.12.0
+build==1.2.2.post1
+
+# Windows-specific (will be ignored on other platforms)
+pywin32==310 ; sys_platform == "win32"
+pypiwin32==223 ; sys_platform == "win32"
+comtypes==1.4.11 ; sys_platform == "win32"
+
+# Note: After installation, you'll need to download the spaCy model:
+# python -m spacy download en_core_web_sm
+#
+# For full setup including model downloads, use:
+# python setup_models.py
