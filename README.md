@@ -24,28 +24,48 @@ The Machine Psychology Lab provides a systematic framework for psychological eva
 
 ## 🚀 Quick Start
 
-### 1. Environment Setup
+### Option 1: Automated Installation (Recommended)
 ```bash
 # Clone the repository
 git clone [your-repo-url]
 cd machine-psychology-lab
 
-# Create conda environment
-conda env create -f environment.yml
+# Run automated installation script
+python install.py
+
+# Activate environment and download models
 conda activate machine-psychology
+python setup_models.py
+
+# Run application
+python machine_psychology_lab_1.py
 ```
 
-### 2. Model Setup
+### Option 2: Manual Installation
 ```bash
+# Clone the repository
+git clone [your-repo-url]
+cd machine-psychology-lab
+
+# Create conda environment with Python 3.11
+conda create -n machine-psychology python=3.11
+conda activate machine-psychology
+
+# Install all packages from conda-forge (more reliable than pip)
+conda install -c conda-forge spacy nltk pandas numpy scipy matplotlib scikit-learn
+conda install -c conda-forge transformers sentence-transformers torch torchvision torchaudio
+conda install -c conda-forge textblob vadersentiment requests pyyaml tqdm
+
+# Download spaCy English model
+python -m spacy download en_core_web_sm
+
 # Download required models (~620MB total)
 python setup_models.py
 
 # Verify installation
 python setup_models.py --verify-only
-```
 
-### 3. Run Application
-```bash
+# Run application
 python machine_psychology_lab_1.py
 ```
 
